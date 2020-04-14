@@ -3,11 +3,27 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <link rel="stylesheet"
+          asp-href-include="/lib/twitter-bootstrap/**/*.min.css"
+          asp-href-exclude="**/*-reboot*,**/*-grid*" />
+    <link rel="stylesheet"
+          asp-href-include="/lib/font-awesome/**/*.css"/>
+
+    <title>SportsStore</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="navbar navbar-inverse bg-inverse" role="navigation">
+        <a class="navbar-brand" href="#">SPORTS STORE</a>
     </div>
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+            Put something useful here later
+        </div>
+        <div class="col-9">
+            @RenderBody()
+        </div>
+    </div>
+    <script asp-src-include="/lib/jquery/dist/**/*.min.js"></script>
+    <script asp-src-include="/lib/twitter-bootstrap/**/*.min.js"></script>
 </body>
 </html>
