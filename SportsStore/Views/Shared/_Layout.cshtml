@@ -7,13 +7,18 @@
           asp-href-include="/lib/twitter-bootstrap/**/*.min.css"
           asp-href-exclude="**/*-reboot*,**/*-grid*" />
     <link rel="stylesheet"
-          asp-href-include="/lib/font-awesome/**/*.css"/>
+          asp-href-include="/lib/font-awesome/css/*.css"/>
 
     <title>SportsStore</title>
 </head>
 <body>
     <div class="navbar navbar-inverse bg-inverse" role="navigation">
-        <a class="navbar-brand" href="#">SPORTS STORE</a>
+        <div class="row">
+            <a class="col navbar-brand" href="#">SPORTS STORE</a>
+            <div class="col-4 text-right">
+                @await Component.InvokeAsync("CartSummary")
+            </div>
+        </div>
     </div>
     <div class="row m-1 p-1">
         <div id="categories" class="col-3">
@@ -23,7 +28,5 @@
             @RenderBody()
         </div>
     </div>
-    <script asp-src-include="/lib/jquery/dist/**/*.min.js"></script>
-    <script asp-src-include="/lib/twitter-bootstrap/**/*.min.js"></script>
 </body>
 </html>
